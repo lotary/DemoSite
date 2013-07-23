@@ -7,6 +7,17 @@
             <param name="ConversionPattern" value="[%5p] %d{HH:mm:ss} %c{1} - %m%n" />
         </layout>
     </appender>
+    
+    <appender name="file" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="INFO" />
+      <param name="File" value="c:/logs/demo-site.log"/>
+      <param name="MaxFileSize" value="10MB"/>
+      <param name="MaxBackupIndex" value="10"/>
+      
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="[%5p] %d{HH:mm:ss} %c{1} - %m%n" />
+      </layout>
+   </appender>
 
     <logger name="org.broadleafcommerce"> <level value="warn" /> </logger>
     <logger name="org.hibernate"> <level value="warn" /> </logger>
@@ -17,6 +28,7 @@
     <root>
         <priority value="warn" />
         <appender-ref ref="console" />
+        <appender-ref ref="file" />
     </root>
 
 </log4j:configuration>

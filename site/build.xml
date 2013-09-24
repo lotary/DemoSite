@@ -54,7 +54,7 @@
 	    <artifact:mvn mavenHome="${maven.home}" fork="true" jvmargs="-DbroadleafCoreDirectory=${broadleafCoreDirectory} -DbroadleafWorkspaceDirectory=${broadleafWorkspaceDirectory} -XX:MaxPermSize=256M -Xmx512M">
 	        <arg value="compile"/>
 	        <arg value="war:exploded"/>
-	        <arg value="tomcat6:run-war"/>
+	        <arg value="tomcat7:run-war"/>
 	    </artifact:mvn>
 	</target>
 	

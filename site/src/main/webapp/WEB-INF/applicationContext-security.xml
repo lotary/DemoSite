@@ -69,6 +69,12 @@
         <sec:custom-filter ref="blCustomerStateFilter" after="REMEMBER_ME_FILTER"/>
         <sec:custom-filter ref="blSessionFixationProtectionFilter" before="SESSION_MANAGEMENT_FILTER"/>
         <sec:custom-filter ref="blPostSecurityFilterChain" after="SWITCH_USER_FILTER"/>
+        <!-- 
+        <sec:port-mappings>
+			<sec:port-mapping http="80" https="443"/>
+			<sec:port-mapping http="8080" https="8443"/>
+		</sec:port-mappings>
+	 -->
     </sec:http>
     
     <!--  The BLC Authentication manager.   -->
@@ -87,6 +93,8 @@
                                           JOIN BLC_ROLE r ON cr.ROLE_ID = r.ROLE_ID 
                                           WHERE USER_NAME=?" />
     
+    
+
     <bean id="blCsrfFilter" class="org.broadleafcommerce.common.security.handler.CsrfFilter" />
                                           
     <!-- Sets the login failure URL -->
